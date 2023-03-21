@@ -6,18 +6,18 @@ const authRoute = require("./routes/auth")
 
 dotenv.config()
 
-mongoose
-    .connect(process.env.MONGO_URL,{
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
     })
-    .then(()=>console.log("DB Connection successful"))
-    .catch(err=> console.log(err))
+    .then(()=>console.log("DB Connection Successfull!"))
+    .catch((err)=> console.log(err))
 
 app.use(express.json())
 
 app.use("/api/auth", authRoute)
 
 app.listen(8800, ()=>{
-    console.log("Backend server is running")
+    console.log("Backend server is running!")
 })
+
