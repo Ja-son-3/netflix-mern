@@ -10,8 +10,11 @@ import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
 import Login from "./pages/login/Login";
+import { useContext } from "react";
+import { AuthContext } from "./context/authContext/AuthContext";
 
 function App() {
+  const {user} = useContext(AuthContext)
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
@@ -23,7 +26,7 @@ function App() {
         <Route path="/movies" element={<ProductList />} />
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/newProduct" element={<NewProduct />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={user ? <Home /> : <Login />} />
       </Route>
       </>
     )
