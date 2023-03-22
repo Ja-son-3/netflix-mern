@@ -3,7 +3,7 @@ import "./app.scss"
 import Watch from "./pages/watch/Watch";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
-import { createBrowserRouter, createRoutesFromElements, Link, Route, Outlet, RouterProvider} from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, Route, Outlet, RouterProvider} from 'react-router-dom'
 // import { useContext } from "react";
 
 function App() {
