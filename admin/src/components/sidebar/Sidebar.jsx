@@ -4,7 +4,6 @@ import {
   Timeline,
   TrendingUp,
   PermIdentity,
-  Storefront,
   AttachMoney,
   BarChart,
   MailOutline,
@@ -12,6 +11,7 @@ import {
   ChatBubbleOutline,
   WorkOutline,
   Report,
+  PlayCircleOutline,
 } from '@mui/icons-material';
 
 export default function Sidebar() {
@@ -43,8 +43,8 @@ export default function Sidebar() {
                 <a className="link" href={`/users`}>Users</a>
               </li>
               <li className="sidebarListItem">
-                <Storefront className="sidebarIcon" />
-                <a className="link" href={`/products`}>Products</a>
+                <PlayCircleOutline className="sidebarIcon" />
+                <a className="link" href={`/movies`}>Movies</a>
               </li>
             <li className="sidebarListItem">
               <AttachMoney className="sidebarIcon" />
