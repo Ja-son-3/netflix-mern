@@ -6,12 +6,15 @@ import { createBrowserRouter, createRoutesFromElements, Route, Outlet, RouterPro
 import UserList from "./pages/userList/UserList";
 import User from "./pages/user/User";
 import NewUser from "./pages/newUser/NewUser";
-import ProductList from "./pages/productList/ProductList";
-import Product from "./pages/product/Product";
-import NewProduct from "./pages/newProduct/NewProduct";
 import Login from "./pages/login/Login";
-import { useContext } from "react";
 import { AuthContext } from "./context/authContext/AuthContext";
+import { useContext } from "react";
+import ListList from "./pages/listList/ListList";
+import List from "./pages/list/List";
+import NewList from "./pages/newList/NewList";
+import MovieList from "./pages/movieList/MovieList";
+import Movie from "./pages/movie/Movie";
+import NewMovie from "./pages/newMovie/NewMovie";
 
 function App() {
   const {user} = useContext(AuthContext)
@@ -23,9 +26,12 @@ function App() {
         <Route path="/users" element={<UserList />} />
         <Route path="/user/:userId" element={<User />} />
         <Route path="/newUser" element={<NewUser />} />
-        <Route path="/movies" element={<ProductList />} />
-        <Route path="/product/:productId" element={<Product />} />
-        <Route path="/newProduct" element={<NewProduct />} />
+        <Route path="/movies" element={<MovieList />} />
+        <Route path="/movie/:movieId" element={<Movie />} />
+        <Route path="/newMovie" element={<NewMovie />} />
+        <Route path="/lists" element={<ListList />} />
+        <Route path="/list/:listId" element={<List />} />
+        <Route path="/newlist" element={<NewList />} />
         <Route path="/login" element={user ? <Home /> : <Login />} />
       </Route>
       </>

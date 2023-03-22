@@ -4,15 +4,17 @@ import {
   Timeline,
   TrendingUp,
   PermIdentity,
-  AttachMoney,
-  BarChart,
+  PlayCircleOutline,
+  List,
   MailOutline,
   DynamicFeed,
   ChatBubbleOutline,
   WorkOutline,
   Report,
-  PlayCircleOutline,
-} from '@mui/icons-material';
+  AddToQueue,
+  QueuePlayNext,
+} from "@mui/icons-material/";
+import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   return (
@@ -21,10 +23,12 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
-            <li className="sidebarListItem active">
-              <LineStyle className="sidebarIcon" />
-              <a className="link" href={`/`}>Home</a>
-            </li>
+            <Link to="/" className="link">
+              <li className="sidebarListItem active">
+                <LineStyle className="sidebarIcon" />
+                Home
+              </li>
+            </Link>
             <li className="sidebarListItem">
               <Timeline className="sidebarIcon" />
               Analytics
@@ -38,22 +42,36 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
+            <Link to="/users" className="link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
-                <a className="link" href={`/users`}>Users</a>
+                Users
               </li>
+            </Link>
+            <Link to="/movies" className="link">
               <li className="sidebarListItem">
                 <PlayCircleOutline className="sidebarIcon" />
-                <a className="link" href={`/movies`}>Movies</a>
+                Movies
               </li>
-            <li className="sidebarListItem">
-              <AttachMoney className="sidebarIcon" />
-              <a className="link" href={`/transactions`}>Transactions</a>
-            </li>
-            <li className="sidebarListItem">
-              <BarChart className="sidebarIcon" />
-              <a className="link" href={`/reports`}>Reports</a>
-            </li>
+            </Link>
+            <Link to="/lists" className="link">
+              <li className="sidebarListItem">
+                <List className="sidebarIcon" />
+                Lists
+              </li>
+            </Link>
+            <Link to="/newMovie" className="link">
+              <li className="sidebarListItem">
+                <AddToQueue className="sidebarIcon" />
+                Add Movie
+              </li>
+            </Link>
+            <Link to="/newList" className="link">
+              <li className="sidebarListItem">
+                <QueuePlayNext className="sidebarIcon" />
+                Add List
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="sidebarMenu">
