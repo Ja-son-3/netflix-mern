@@ -9,10 +9,12 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
+import Login from "./pages/login/Login";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
+      <>
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
         <Route path="/users" element={<UserList />} />
@@ -21,7 +23,9 @@ function App() {
         <Route path="/movies" element={<ProductList />} />
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/newProduct" element={<NewProduct />} />
+        <Route path="/login" element={<Login />} />
       </Route>
+      </>
     )
   )
 
